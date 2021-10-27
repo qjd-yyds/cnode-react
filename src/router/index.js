@@ -10,6 +10,7 @@ const route = [
     path: '/',
     exact: true, // 精确匹配
     render(props) {
+      props.testName = 'testName';
       return <IndexPage {...props} />;
     }
   },

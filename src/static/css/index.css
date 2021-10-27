@@ -1,0 +1,34 @@
+.wrap {
+  margin: 0 5px;
+}
+#foot {
+  padding: 24px 0;
+}
+@media all and (min-width: 576px) {
+  .wrap {
+    margin: 0 10px;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .wrap {
+    margin: 0 15px;
+  }
+}
+@media all and (min-width: 992px) {
+  .wrap {
+    margin: 0 20px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .wrap {
+    width: 980px;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 1600px) {
+  .wrap {
+    width: 1200px;
+  }
+}
