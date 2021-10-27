@@ -2,12 +2,16 @@ const CracoLessPlugin = require('craco-less');
 const webpack = require('webpack');
 const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 module.exports = {
   webpack: {
+    alias: {
+      '@': path.resolve('src')
+    },
     plugins: [
       // new BundleAnalyzerPlugin(), // 打包分析
-      new SimpleProgressWebpackPlugin(), // 查看打包进度
+      new SimpleProgressWebpackPlugin() // 查看打包进度
       // 打包忽略console和debugger
       // new UglifyJsPlugin({
       //   uglifyOptions: {

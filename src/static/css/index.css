@@ -1,6 +1,9 @@
 .wrap {
   margin: 0 5px;
 }
+#header.ant-layout-header {
+  padding: 0;
+}
 #foot {
   padding: 24px 0;
 }

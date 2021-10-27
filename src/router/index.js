@@ -1,5 +1,5 @@
 import React from 'react';
-import Page404 from '../view/404';
+import Page404 from '@/view/404';
 import AboutPage from '../view/about';
 import GetStartPage from '../view/getstart';
 import IndexPage from '../view/index';
@@ -50,5 +50,44 @@ const route = [
     }
   }
 ];
-
-export { route };
+const nav = [
+  {
+    to: '/',
+    txt: '首页'
+  },
+  {
+    to: '/getStart',
+    txt: '新手入门'
+  },
+  {
+    to: '/about',
+    txt: '关于我们'
+  }
+];
+const indexNav = [
+  {
+    name: '全部',
+    url: '/?tab=all'
+  },
+  {
+    name: '精华',
+    url: '/?tab=good'
+  },
+  {
+    name: '分享',
+    url: '/?tab=share'
+  },
+  {
+    name: '问答',
+    url: '/?tab=ask'
+  },
+  {
+    name: '招聘',
+    url: '/?tab=job'
+  },
+  {
+    name: '客户端测试',
+    url: '/?tab=dev'
+  }
+];
+export { route, nav, indexNav };
