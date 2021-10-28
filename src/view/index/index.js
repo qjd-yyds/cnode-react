@@ -1,5 +1,11 @@
+import IndexNav from './indexNav';
+
 function IndexPage(props) {
-  return <h1>首页</h1>;
+  return (
+    <div>
+      <IndexNav />
+    </div>
+  );
 }
 
 export default IndexPage;

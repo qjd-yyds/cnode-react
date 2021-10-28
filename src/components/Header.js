@@ -10,12 +10,12 @@ function Header() {
       <Layout.Header id="header">
         <div className="wrap">
           <Row>
-            <Col xs={12} sm={8} md={4}>
+            <Col xs={6} sm={8} md={4}>
               <h1 className="logo">
                 <Link to="/">logo</Link>
               </h1>
             </Col>
-            <Col xs={12} sm={16} md={20}>
+            <Col xs={18} sm={16} md={20}>
               <Menu mode="horizontal" theme="dark" selectable defaultSelectedKeys={[activeIndex.to]}>
                 {nav.map((item) => (
                   <Menu.Item key={item.to}>

@@ -5,13 +5,20 @@ import GetStartPage from '../view/getstart';
 import IndexPage from '../view/index';
 import TopicPage from '../view/topic';
 import UserPage from '../view/user';
+import QueryString from 'qs';
+const types = ['all', 'good', 'share', 'ask', 'job', 'dev'];
 const route = [
   {
     path: '/',
     exact: true, // 精确匹配
     render(props) {
-      props.testName = 'testName';
-      return <IndexPage {...props} />;
+      const { location } = props;
+      const { search } = location;
+      const { tab, page } = QueryString.parse(search.substr(1));
+      if ((tab === undefined && page === undefined) || (types.includes(tab) && page === undefined) || page > 0) {
+        return <IndexPage {...props} />;
+      }
+      return <Page404 />;
     }
   },
   {
@@ -66,28 +73,28 @@ const nav = [
 ];
 const indexNav = [
   {
-    name: '全部',
-    url: '/?tab=all'
+    txt: '全部',
+    to: '/?tab=all'
   },
   {
-    name: '精华',
-    url: '/?tab=good'
+    txt: '精华',
+    to: '/?tab=good'
   },
   {
-    name: '分享',
-    url: '/?tab=share'
+    txt: '分享',
+    to: '/?tab=share'
   },
   {
-    name: '问答',
-    url: '/?tab=ask'
+    txt: '问答',
+    to: '/?tab=ask'
   },
   {
-    name: '招聘',
-    url: '/?tab=job'
+    txt: '招聘',
+    to: '/?tab=job'
   },
   {
-    name: '客户端测试',
-    url: '/?tab=dev'
+    txt: '客户端测试',
+    to: '/?tab=dev'
   }
 ];
-export { route, nav, indexNav };
+export { route, nav, indexNav, types };
