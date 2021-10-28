@@ -14,8 +14,8 @@ function IndexPage(props) {
     return state.topics;
   });
   useEffect(() => {
-    getData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    getData(tab, page);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab, page]);
   return (
     <div>
