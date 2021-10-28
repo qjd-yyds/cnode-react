@@ -1,3 +1,6 @@
+#root {
+  min-height: 100vh;
+}
 .wrap {
   margin: 0 5px;
 }
@@ -6,6 +9,13 @@
 }
 #foot {
   padding: 24px 0;
+}
+.wrap .topics_list {
+  background-color: #fff;
+  padding: 0 15px;
+}
+.index_nav {
+  margin-top: 10px;
 }
 @media all and (min-width: 576px) {
   .wrap {
