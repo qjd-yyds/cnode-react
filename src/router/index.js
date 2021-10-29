@@ -69,6 +69,10 @@ const nav = [
   {
     to: '/about',
     txt: '关于我们'
+  },
+  {
+    to: '/user',
+    txt: '我的信息'
   }
 ];
 const indexNav = [

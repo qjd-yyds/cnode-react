@@ -23,7 +23,6 @@ function App() {
           </Switch>
         </div>
       </Layout.Content>
-
       <Footer />
     </Layout>
   );

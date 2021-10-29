@@ -2,7 +2,12 @@ import { List, Col, Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import TopicTag from './TopicTag';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/zh-cn';
+// 扩展dayjs
+dayjs.extend(relativeTime);
+// import moment from 'moment';
 function TopicsList(props) {
   const { loading, data } = props;
   return (
@@ -20,12 +25,12 @@ function TopicsList(props) {
                 <Avatar title={avatar_url} src={avatar_url} icon={<UserOutlined />} />
               </Link>
             </Col>
-            <Col xs={24} md={20}>
+            <Col xs={24} md={21}>
               <TopicTag tab={top ? 'top' : good ? 'good' : tab}></TopicTag>
               <Link to={`/topics/${id}`}>{title}</Link>
             </Col>
-            <Col xs={0} md={4}>
-              {last_reply_at}
+            <Col xs={0} md={2} className="from_now">
+              {dayjs(last_reply_at).locale('zh-cn').fromNow()}
             </Col>
           </List.Item>
         );

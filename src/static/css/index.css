@@ -20,6 +20,9 @@
 .topic_tag {
   margin-left: 10px;
 }
+.from_now {
+  text-align: right;
+}
 @media all and (min-width: 576px) {
   .wrap {
     margin: 0 10px;

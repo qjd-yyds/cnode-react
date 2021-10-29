@@ -1,7 +1,6 @@
 import { Tag } from 'antd';
 
 function setTag(tab) {
-  console.log(tab);
   switch (tab) {
     case 'top':
       return <Tag color="#87d068" className="topic_tag">置顶</Tag>;
