@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { useTopicsList } from '../../store/action';
 import IndexNav from './indexNav';
+import IndexPagination from './indexPagination';
 function IndexPage(props) {
   const getData = useTopicsList();
   const { search } = useLocation();
@@ -21,6 +22,7 @@ function IndexPage(props) {
     <div>
       <IndexNav />
       <TopicsList loading={loading} data={data} />
+      {!loading && <IndexPagination />}
     </div>
   );
 }

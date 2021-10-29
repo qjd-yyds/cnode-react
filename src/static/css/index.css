@@ -23,6 +23,9 @@
 .from_now {
   text-align: right;
 }
+.index_pagination {
+  text-align: center;
+}
 @media all and (min-width: 576px) {
   .wrap {
     margin: 0 10px;
