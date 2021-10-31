@@ -4,7 +4,7 @@ import { nav } from '../router';
 function Header() {
   // 获取当前路由信息
   const { pathname } = useLocation();
-  const activeIndex = nav.find((navData) => navData.to === pathname);
+  const activeIndex = nav.findIndex((navData) => navData.to === pathname);
   return (
     <Affix offsetTop={0}>
       <Layout.Header id="header">
@@ -16,9 +16,9 @@ function Header() {
               </h1>
             </Col>
             <Col xs={18} sm={16} md={20}>
-              <Menu mode="horizontal" theme="dark" selectable defaultSelectedKeys={[activeIndex.to]}>
-                {nav.map((item) => (
-                  <Menu.Item key={item.to}>
+              <Menu mode="horizontal" theme="dark" selectedKeys={[activeIndex + '']}>
+                {nav.map((item, index) => (
+                  <Menu.Item key={index}>
                     <Link to={item.to}>{item.txt}</Link>
                   </Menu.Item>
                 ))}

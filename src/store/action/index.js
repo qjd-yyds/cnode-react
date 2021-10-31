@@ -19,5 +19,27 @@ function useTopicsList() {
     });
   };
 }
-
-export { useTopicsList };
+// 主题详情
+function useTopic() {
+  const dispatch = useDispatch();
+  return function (id) {
+    dispatch({
+      type: 'topic_loading'
+    });
+    http
+      .get(`/topic/${id}`)
+      .then((res) => {
+        dispatch({
+          type: 'topic_loadover',
+          data: res.data.data
+        });
+      })
+      .catch((res) => {
+        dispatch({
+          type: 'topic_error',
+          errMsg: res.response.data.error_msg
+        });
+      });
+  };
+}
+export { useTopicsList, useTopic };

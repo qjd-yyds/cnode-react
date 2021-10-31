@@ -29,7 +29,7 @@ const route = [
     }
   },
   {
-    path: '/user/:username',
+    path: '/user',
     exact: true, // 精确匹配
     render(props) {
       return <UserPage {...props} />;
@@ -68,11 +68,7 @@ const nav = [
   },
   {
     to: '/about',
-    txt: '关于我们'
-  },
-  {
-    to: '/user',
-    txt: '我的信息'
+    txt: '关于'
   }
 ];
 const indexNav = [

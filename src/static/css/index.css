@@ -1,6 +1,9 @@
 #root {
   min-height: 100vh;
 }
+img {
+  max-width: 100%;
+}
 .wrap {
   margin: 0 5px;
 }

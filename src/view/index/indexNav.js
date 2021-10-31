@@ -4,8 +4,7 @@ import { indexNav, types } from '@/router';
 import QueryString from 'qs';
 function IndexNav(props) {
   const { search } = useLocation();
-  let { tab = 'all', page = '1' } = QueryString.parse(search.substr(1));
-  console.log(page, 'page');
+  let { tab = 'all' } = QueryString.parse(search.substr(1));
   const activeIndex = typeof tab === 'undefined' ? 0 : types.indexOf(tab);
   return (
     <Menu className="index_nav" mode="horizontal" selectedKeys={[activeIndex + '']}>
