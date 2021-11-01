@@ -42,4 +42,19 @@ function useTopic() {
       });
   };
 }
-export { useTopicsList, useTopic };
+// 用户详情
+function useUser() {
+  const dispatch = useDispatch();
+  return function (loginname) {
+    dispatch({
+      type: 'user_loading'
+    });
+    http.get(`/user/${loginname}`).then((res) => {
+      dispatch({
+        type: 'user_loadover',
+        data: res.data.data
+      });
+    });
+  };
+}
+export { useTopicsList, useTopic, useUser };

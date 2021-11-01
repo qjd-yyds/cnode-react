@@ -6,7 +6,7 @@ export default function replies(props) {
   const { data = [], loading } = props;
   data.reverse();
   return (
-    <Card title="评论列表" loading={loading}>
+    <Card type="inner" title="评论列表" loading={loading}>
       <List
         dataSource={data}
         pagination={true}

@@ -29,7 +29,7 @@ const route = [
     }
   },
   {
-    path: '/user',
+    path: '/user/:loginname',
     exact: true, // 精确匹配
     render(props) {
       return <UserPage {...props} />;

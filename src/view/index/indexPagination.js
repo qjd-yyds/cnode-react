@@ -8,7 +8,7 @@ export default function IndexPagination() {
   return (
     <div className="index_pagination">
       <Pagination
-        defaultCurrent={page}
+        current={page - 0}
         defaultPageSize={20}
         total={1000}
         itemRender={(page, type) => {
